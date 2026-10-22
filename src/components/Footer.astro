@@ -1,0 +1,66 @@
+---
+const socials = [
+    { label: 'Email', href: 'mailto:zeromemory@konkuk.ac.kr'},
+    { label: 'GitHub', href: 'https://github.com/derivedstack'},
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class='site-footer'>
+    <div class='container footer-inner'>
+        <ul class='footer-links'>
+            {
+                socials.map((s) => (
+                    <li>
+                        <a href={s.href}
+                            target={s.href.startsWith('http')? '_blank' : undefined}
+                            rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        >
+                            {s.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <p class='footer-meta'>© {year} Hyunho Bae</p>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        border-top: 1px solid var(--border);
+        padding-block: 1.75rem 2.25rem;
+        margin-top: 3rem;
+    }
+
+    .footer-inner {
+        gap: 0.85rem;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--muted);
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    .footer-meta {
+        margin: 0;
+        font-size: 0.82rem;
+        color: var(--muted);
+    }
+</style>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+	<section class='profile'>
+		<div class='profile-info'>
+			<h1>Hyunho Bae</h1>
+			<p class='profile-role'>Undergraduate Student · Department of Mathematics · Konkuk University</p>
+			<div class='profile-bio'>
+				<p>
+					I am currently a second year undergraduate student studying mathematics at <a href="https://math.konkuk.ac.kr/math/index.do">Konkuk University</a>. I am primarily interested in algebraic and arithmetic geometry.
+				</p>
+			</div>
+		</div>
+		<img class='profile-avatar' src='images/profile.jpg' alt='Hyunho Bae'/>
+	</section>
+</BaseLayout>
+
+<style>
+	.profile {
+		display: flex;
+		align-items: flex-start;
+		gap: 2rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.profile h1 {
+		margin-bottom: 0.35rem;
+	}
+
+	.profile-info {
+		margin-bottom: 2rem;
+	}
+
+	.profile-avatar {
+		width: 160px;
+		height: auto;
+		flex-shrink: 0;
+		object-fit: cover;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+	}
+
+	.profile-role {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.95rem;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+	}
+</style>
